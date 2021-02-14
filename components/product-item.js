@@ -10,18 +10,18 @@ class ProductItem extends HTMLElement {
     this.inCart = inCart;
 
     // shadow root
-    let shadow = this.attachShadow({mode: 'open'});
+    this.attachShadow({mode: 'open'});
 
     // apply external styles to shadow dom
     // attach create element to the shadow dom
     const linkElem = document.createElement('link');
     linkElem.rel = 'stylesheet';
     linkElem.href = './styles/styles.css';
-    shadow.appendChild(linkElem);
+    this.shadowRoot.appendChild(linkElem);
 
     // create new list element this product, set class name
     const li = document.createElement('li');
-    li.className = "product";
+    li.setAttribute('class', 'product');
 
     // create image for this product, set src & alt
     const img = document.createElement('img');
@@ -31,13 +31,13 @@ class ProductItem extends HTMLElement {
 
     // create title for this product
     const pTitle = document.createElement('p');
-    pTitle.className = "title";
+    pTitle.setAttribute('class', 'title');
     pTitle.textContent = this.title;
     li.appendChild(pTitle);
 
     // create price for this product
     const pPrice = document.createElement('p');
-    pPrice.className = "price";
+    pPrice.setAttribute('class', 'price');
     pTitle.textContent = this.price;
     li.appendChild(pPrice);
 
