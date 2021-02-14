@@ -12,13 +12,6 @@ class ProductItem extends HTMLElement {
     // shadow root
     this.attachShadow({mode: 'open'});
 
-    // apply external styles to shadow dom
-    // attach create element to the shadow dom
-    const linkElem = document.createElement('link');
-    linkElem.rel = 'stylesheet';
-    linkElem.href = './styles/styles.css';
-    this.shadowRoot.appendChild(linkElem);
-
     // create new list element this product, set class name
     const li = document.createElement('li');
     li.setAttribute('class', 'product');
@@ -94,8 +87,18 @@ class ProductItem extends HTMLElement {
       localStorage.setItem('cart', JSON.stringify(cartObj));
     });
 
+    // apply external styles to shadow dom
+    // attach create element to the shadow dom
+    const linkElem = document.createElement('link');
+    linkElem.rel = 'stylesheet';
+    linkElem.href = './styles/styles.css';
+    this.shadowRoot.appendChild(linkElem);
+
     // add button to product item
     li.appendChild(button);
+
+    // append to shadow root
+    this.shadowRoot.appendChild(li);
   }
 }
 
