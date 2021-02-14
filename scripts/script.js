@@ -21,7 +21,7 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 function createItems() {
-  // get the items
+  // get the items from local storage
   const items = localStorage.getItem('items');
   const itemsObj = JSON.parse(items);
 
@@ -31,7 +31,7 @@ function createItems() {
 
   // update cart size based on cart in local storage
   const cartSize = document.getElementById("cart-count");
-  cartSize.textContent = Number(cartObj.length);
+  cartSize.textContent = cartObj.length;
 
   // product list
   const ul = document.getElementById("product-list");

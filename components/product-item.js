@@ -14,7 +14,7 @@ class ProductItem extends HTMLElement {
 
     // create new list element this product, set class name
     const li = document.createElement('li');
-    li.setAttribute('class', 'product');
+    li.className = 'product';
 
     // create image for this product, set src & alt
     const img = document.createElement('img');
@@ -24,14 +24,14 @@ class ProductItem extends HTMLElement {
 
     // create title for this product
     const pTitle = document.createElement('p');
-    pTitle.setAttribute('class', 'title');
+    pTitle.className = 'title'; 
     pTitle.textContent = this.title;
     li.appendChild(pTitle);
 
     // create price for this product
     const pPrice = document.createElement('p');
-    pPrice.setAttribute('class', 'price');
-    pTitle.textContent = this.price;
+    pPrice.className = 'price'; 
+    pPrice.textContent = this.price;
     li.appendChild(pPrice);
 
     // create button for this product
