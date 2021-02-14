@@ -16,7 +16,7 @@ class ProductItem extends HTMLElement {
     // attach create element to the shadow dom
     const linkElem = document.createElement('link');
     linkElem.rel = 'stylesheet';
-    linkElem.href = '/styles/styles.css';
+    linkElem.href = './styles/styles.css';
     shadow.appendChild(linkElem);
 
     // create new list element this product, set class name
@@ -70,6 +70,9 @@ class ProductItem extends HTMLElement {
 
         // add item to the cart
         cartObj.push(this.id);
+
+        // alert that item was added
+        alert('Added to Cart!')
       }
       else {
         // change button title

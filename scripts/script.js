@@ -33,9 +33,6 @@ function createItems() {
   const cartSize = document.getElementById("cart-count");
   cartSize.textContent = Number(cartObj.length);
 
-  // product list
-  const ul = document.getElementById("product-list");
-
   for (let i = 0; i < itemsObj.length; i++) {
     // check whether item is already in cart from before
     let inCart = false;
@@ -46,8 +43,7 @@ function createItems() {
       }
     }    
 
-    // create new product for each item, append to product list
-    let item = new ProductItem(itemsObj[i].id, itemsObj[i].image, itemsObj[i].title, itemsObj[i].price, inCart); 
-    ul.appendChild(item);
+    // create new product for each item, appends to product list
+    new ProductItem(itemsObj[i].id, itemsObj[i].image, itemsObj[i].title, itemsObj[i].price, inCart); 
   } 
 }
