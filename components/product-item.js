@@ -96,10 +96,6 @@ class ProductItem extends HTMLElement {
 
     // add button to product item
     li.appendChild(button);
-
-    // add newly created product item to product list
-    const ul = document.getElementById("product-list");
-    ul.appendChild(li);
   }
 }
 
